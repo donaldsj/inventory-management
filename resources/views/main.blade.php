@@ -15,7 +15,7 @@
     <div class="page-container2">
     @include('partials._top')
 
-
+    @yield('content')
         <!-- END PAGE CONTAINER-->
     </div>
 
