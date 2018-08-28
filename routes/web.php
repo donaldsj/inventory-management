@@ -13,11 +13,16 @@
 
 Route::get('/', function () {
     return view('home');
+
+    return view('inventories.show');
+
 });
 
 Auth::routes();
 
+
 Route::get('/home', 'HomeController@index')->name('home');
+
 Route::get('/',function(){
   return view('reports/create');
 });
@@ -25,4 +30,14 @@ Route::get('/',function(){
     return view('reports/show');
   });
 Route::resource('Reports','ReportController');
+
+
+
+
+Route::resource('inventories','InventoriesController');
+
+Route::group(['middleware' => ['web']], function (){
+
+
+});
 
