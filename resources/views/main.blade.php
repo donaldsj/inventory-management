@@ -15,10 +15,10 @@
     <div class="page-container2">
     @include('partials._top')
 
-    @yield('content')
+             @yield('content')
+    @include('partials._footer')
         <!-- END PAGE CONTAINER-->
     </div>
-
 
 </div>
 

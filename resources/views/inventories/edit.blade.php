@@ -12,7 +12,7 @@
                             <div class="card-header">Edit An Item</div>
                             <div class="card-body card-block">
                                 <div class="login-form">
-                                    <form action="{{ route('inventories.store') }}" method="GET" class="">
+                                    <form action="{{ route('inventories.update') }}" method="GET" class="">
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-addon">

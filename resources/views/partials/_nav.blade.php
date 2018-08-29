@@ -47,8 +47,8 @@
                     <span class="inbox-num">3</span>
                 </li>
                 <li>
-                    <a href="#">
-                        <i class="fas fa-shopping-basket"></i>eCommerce</a>
+                    <a href="{{route('inventories.create')}}">
+                        <i class="fas fa-shopping-basket"></i>Show Inventories</a>
                 </li>
                 <li class="has-sub">
                     <a class="js-arrow" href="#">

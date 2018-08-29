@@ -12,18 +12,35 @@
 */
 
 Route::get('/', function () {
-    return view('inventories.show');
+    return view('home');
 });
 
 Auth::routes();
 
 
-Route::get('/home', 'HomeController@index')->name('home');
 
 
-Route::resource('inventories','InventoriesController');
 
 Route::group(['middleware' => ['web']], function (){
+
+    Route::get('auth/login', ['as' => 'login', 'uses' => 'Auth\LoginController@getLogin']);
+    Route::post('auth/login', 'Auth\LoginController@authenticate');
+    Route::get('auth/logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@getLogout']);
+
+    // Registration Routes
+    Route::get('auth/register', 'Auth\RegisterController@showRegistrationForm ');
+    Route::post('auth/register', 'Auth\RegisterController@register');
+
+    //password reset routes
+    Route::get('password/reset/{token?}', 'Auth\ResetPasswordController@showResetForm');
+    Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
+    Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+    Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm');
+
+    Route::resource('inventories','InventoryController');
+
+    Route::get('/home', 'HomeController@index')->name('home');
+
 
 
 });
