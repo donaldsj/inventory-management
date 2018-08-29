@@ -13,9 +13,25 @@
 
 Route::get('/', function () {
     return view('home');
+<<<<<<< HEAD
+=======
+
+    return view('inventories.show');
+
+>>>>>>> c171815f1ffbf1261fe467cebd084b6488876506
 });
 
 Auth::routes();
+
+
+
+Route::get('/',function(){
+  return view('reports/create');
+});
+Route::get('/',function(){
+    return view('reports/show');
+  });
+Route::resource('Reports','ReportController');
 
 
 
@@ -44,3 +60,4 @@ Route::group(['middleware' => ['web']], function (){
 
 
 });
+
