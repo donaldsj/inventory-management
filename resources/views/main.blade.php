@@ -14,7 +14,7 @@
     <!-- PAGE CONTAINER-->
     <div class="page-container2">
     @include('partials._top')
-
+        @include('partials._messages')
              @yield('content')
     @include('partials._footer')
         <!-- END PAGE CONTAINER-->

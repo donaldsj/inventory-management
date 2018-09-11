@@ -2,13 +2,13 @@
 <aside class="menu-sidebar2">
     <div class="logo">
         <a href="#">
-            <img src="images/icon/logo-white.png" alt="Cool Admin" />
+            <img src="{{ url::asset('images/icon/logo-white.png') }}" alt="Cool Admin" />
         </a>
     </div>
     <div class="menu-sidebar2__content js-scrollbar1">
         <div class="account2">
             <div class="image img-cir img-120">
-                <img src="images/icon/avatar-big-01.jpg" alt="John Doe" />
+                <img src="{{ url::asset('images/icon/avatar-big-01.jpg') }}" alt="John Doe" />
             </div>
             <h4 class="name">john doe</h4>
             <a href="#">Sign out</a>
@@ -42,17 +42,19 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="inbox.html">
-                        <i class="fas fa-chart-bar"></i>Inbox</a>
+                <li><a href="{{ route('inventories.index') }}">
+
+                <i class="fas fa-chart-bar"></i>Inventories</a>
                     <span class="inbox-num">3</span>
                 </li>
                 <li>
-                    <a href="{{route('inventories.create')}}">
-                        <i class="fas fa-shopping-basket"></i>Show Inventories</a>
+                    <a href="{{ route('inventories.create') }}">
+                        <i class="fas fa-shopping-basket"></i>Insert New Item</a>
                 </li>
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
-                        <i class="fas fa-trophy"></i>Features
+
+                <i class="fas fa-trophy"></i>Features
                         <span class="arrow">
                                     <i class="fas fa-angle-down"></i>
                                 </span>
@@ -85,7 +87,7 @@
                     </a>
                     <ul class="list-unstyled navbar__sub-list js-sub-list">
                         <li>
-                            <a href="login.html">
+                            <a href="{{ route('login') }}">
                                 <i class="fas fa-sign-in-alt"></i>Login</a>
                         </li>
                         <li>
@@ -96,6 +98,8 @@
                             <a href="forget-pass.html">
                                 <i class="fas fa-unlock-alt"></i>Forget Password</a>
                         </li>
+                     <li><a href="{{ url('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout </a></li>
+
                     </ul>
                 </li>
                 <li class="has-sub">

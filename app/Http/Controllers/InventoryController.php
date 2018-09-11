@@ -8,6 +8,7 @@ use Session;
 
 
 
+
 class InventoryController extends Controller
 {
     /**
@@ -17,7 +18,8 @@ class InventoryController extends Controller
      */
     public function index()
     {
-        return view('inventories.index');
+        $inventories = inventory::all();
+        return view('inventories.index')->withInventories($inventories);
     }
 
     /**
@@ -46,16 +48,17 @@ class InventoryController extends Controller
         ));
         //creating new model
         $inventory = new inventory;
-        $inventory->type = $request->type;
-        $inventory->name = $request->name;
-        $inventory->description = $request->description;
-        $inventory->located_at = $request->located_at;
+        $inventory->type = $request->get('type');
+        $inventory->name = $request->get('name');
+        $inventory->description = $request->get('description');
+        $inventory->located_at = $request->get('located_at');
 
         $inventory->save();
 
         Session::flash('success','Item successfully Added');
 
-        return redirect()->route('inventories', $inventory->id);
+        return redirect()->route('inventories.show', $inventory->id);
+
     
     }
 
@@ -67,7 +70,8 @@ class InventoryController extends Controller
      */
     public function show($id)
     {
-        return view('inventories.show');
+        $inventory = inventory::find($id);
+        return view('inventories.show')->withInventory($inventory);
     }
 
     /**

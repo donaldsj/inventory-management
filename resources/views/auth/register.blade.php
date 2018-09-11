@@ -2,7 +2,9 @@
 @section('title', '| Register')
 @section('content')
 
-    <div class="row justify-content-center">
+    <section>
+        <div class="section__content section__content--p30">
+            <div class="container-fluid">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Register') }}</div>
@@ -73,5 +75,7 @@
             </div>
         </div>
     </div>
+</div>
+</section>
 
 @endsection

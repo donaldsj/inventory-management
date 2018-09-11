@@ -78,6 +78,6 @@ class RegisterController extends Controller
 
         $this->validator($request->all());
         $this->create($request->all());
-
+        return view('/home');
     }
 }

@@ -14,6 +14,8 @@
                             <div class="card-body card-block">
                                 <div class="login-form">
                                     <form action="{{ url('inventories') }}" method="POST" class="">
+                                        @csrf
+
                                         <div class="form-group">
                                             <div class="input-group">
                                                 <div class="input-group-addon">
