@@ -7,11 +7,31 @@
     </div>
     <div class="menu-sidebar2__content js-scrollbar1">
         <div class="account2">
+         @if (Auth::check())
+
             <div class="image img-cir img-120">
                 <img src="{{ url::asset('images/icon/avatar-big-01.jpg') }}" alt="John Doe" />
             </div>
-            <h4 class="name">john doe</h4>
-            <a href="#">Sign out</a>
+               <ul class="list-unstyled navbar__sub-list js-sub-list">
+                    
+            <h4 class="name">Hello {{ Auth::user()->name }}</h4><hr>
+
+             <li><a href="{{ route('inventories.index') }}">
+
+                <i class="fas fa-chart-bar"></i>Inventories</a>
+                    <span class="inbox-num">3</span><hr>
+                </li>
+                <li>
+                    <a href="{{ route('inventories.create') }}">
+                        <i class="fas fa-shopping-basket"></i>Insert New Item</a><hr>
+                </li>
+              <li><a href="{{ url('logout') }}"><i class="fas fa-sign-out-alt"></i>Logout </a></li>
+
+            </ul>
+     
+                     @else
+                <a href="{{ route('login') }}" class="fas fa-sign-in-alt">Login</a>
+                    @endif
         </div>
         <nav class="navbar-sidebar2">
             <ul class="list-unstyled navbar__list">
@@ -42,15 +62,7 @@
                     </ul>
                 </li>
                 <li>
-                <li><a href="{{ route('inventories.index') }}">
-
-                <i class="fas fa-chart-bar"></i>Inventories</a>
-                    <span class="inbox-num">3</span>
-                </li>
-                <li>
-                    <a href="{{ route('inventories.create') }}">
-                        <i class="fas fa-shopping-basket"></i>Insert New Item</a>
-                </li>
+    
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
 

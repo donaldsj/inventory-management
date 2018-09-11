@@ -57,10 +57,13 @@
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
-                                </button>
+                                </button><hr>
 
                                 <a class="btn btn-link" href="#">
                                     {{ __('Forgot Your Password?') }}
+                                </a>
+                                 <a class="btn btn-link" href="{{ route('register') }}">
+                                    {{ __('Get Registered Here!') }}
                                 </a>
                             </div>
                         </div>
